@@ -6,22 +6,24 @@
         {
             // Value type
             var a = 123;
-            object b = (object)a; // Boxing explicit - use separate memory locations
+            object b = (object)a; // Boxing explicit - use separate memory locations (stack to heap)
             a = 1234;
 
-            Console.WriteLine($"Boxing: Value-type value = {a}");
-            Console.WriteLine($"Boxing: Object-type value = {b}");
+            Console.WriteLine($"Boxing: Value-type value = {a}"); // 1234
+            Console.WriteLine($"Boxing: Object-type value = {b}"); // 123
 
             // Unboxing explicit
-            var c = (int)b;
+            var c = (int)b; // (heap to stack)
             Console.WriteLine($"Unboxing: Value-type value = {c}");
 
 
             // Interface
             var d = new ConcreteClass();
-            object e = d; // boxing
+            d.Age = 1;
+            object e = d; // boxing (heap to heap, is the same object)
+            d.Age = 2;
             var f = (IMyInterface)e;
-            f.Call();
+            f.Call(); // age 2
 
             var myInterface = e as IMyInterface; // Convert if is possible. It doesn't throw an exception
             myInterface?.Call(); 
@@ -44,9 +46,10 @@
 
         public class ConcreteClass : IMyInterface
         {
+            public int Age { get; set; }
             public void Call()
             {
-                Console.WriteLine("ConcreteClass");
+                Console.WriteLine($"ConcreteClass Age: {Age}");
             }
         }
     }
