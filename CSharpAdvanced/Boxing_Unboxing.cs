@@ -17,7 +17,7 @@
             Console.WriteLine($"Unboxing: Value-type value = {c}");
 
 
-            // Interface
+            // Reference type
             var d = new ConcreteClass();
             d.Age = 1;
             object e = d; // boxing (heap to heap, is the same object)
