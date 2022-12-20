@@ -30,4 +30,7 @@ test9.Call();
 var test10 = new Array_ArrayList();
 test10.Call();
 
+var test11 = new Stack_Queue();
+test11.Call();
+
 Console.ReadLine();
