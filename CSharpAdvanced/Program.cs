@@ -12,4 +12,10 @@ test3.Call();
 var test4 = new Boxing_Unboxing();
 test4.Call();
 
+var test5 = new GarbageCollection();
+test5.Call();
+
+var test6 = new TryCatchFinally();
+test6.Call();
+
 Console.ReadLine();
