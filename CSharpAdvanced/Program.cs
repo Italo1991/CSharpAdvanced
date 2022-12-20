@@ -18,4 +18,16 @@ test5.Call();
 var test6 = new TryCatchFinally();
 test6.Call();
 
+var test7 = new IList_IEnumerable_ICollection();
+test7.Call();
+
+var test8 = new CSharpAdvanced.IQueryable();
+test8.Call();
+
+var test9 = new First_Single_FirstOrDefault_SingleOrDefault();
+test9.Call();
+
+var test10 = new Array_ArrayList();
+test10.Call();
+
 Console.ReadLine();
